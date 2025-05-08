@@ -1,0 +1,57 @@
+# Ignore database dumps and backups
+*.sql
+*.sql.gz
+*.dump
+
+# Ignore PostgreSQL specific files
+pgdata/
+*.log
+
+# Ignore environment configuration files
+.env
+.env.local
+.env.*.local
+
+# Ignore Python virtual environments (if using Python)
+venv/
+__pycache__/
+*.pyc
+
+# Ignore Node.js modules (if using Node.js)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignore OS junk files
+.DS_Store
+Thumbs.db
+
+# Ignore editor/IDE settings
+.vscode/
+.idea/
+*.swp
+
+# Ignore compiled files
+*.o
+*.so
+*.exe
+*.out
+
+# Ignore coverage / test output
+coverage/
+*.cover
+*.lcov
+*.lcov.info
+
+# Ignore logs
+*.log
+
+# Ignore backups
+*~
+*.bak
+*.tmp
+
+# Ignore build output (if any)
+dist/
+build/
