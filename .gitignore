@@ -1,5 +1,4 @@
 # Ignore database dumps and backups
-*.sql
 *.sql.gz
 *.dump
 
