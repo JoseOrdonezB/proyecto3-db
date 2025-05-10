@@ -17,5 +17,17 @@ def index():
 def reportes():
     return render_template('reportes.html')
 
+@app.route('/estudiantes')
+def estudiantes():
+    return render_template('estudiantes.html')
+
+@app.route('/instructores')
+def instructores():
+    return render_template('instructores.html')
+
+@app.route('/cursos')
+def cursos():
+    return render_template('cursos.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, debug=True)

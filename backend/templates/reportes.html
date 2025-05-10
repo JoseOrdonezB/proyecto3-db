@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reportes</title>
 </head>
 <body>
-    <h1>Reportes</h1>
-    
+    <h1>Reportes en tiempo real</h1>
+
+    <form id="filtros">
+        Curso ID: <input type="text" id="curso_id">
+        Fecha inicio: <input type="date" id="fecha_inicio">
+        Fecha fin: <input type="date" id="fecha_fin">
+        <button type="button" onclick="cargarReporte()">Generar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script src="{{ url_for('static', filename='js/reportes.js') }}"></script>
 </body>
 </html>
