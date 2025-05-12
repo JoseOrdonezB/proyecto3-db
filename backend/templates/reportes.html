@@ -1,20 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Reportes</title>
+  <meta charset="UTF-8">
+  <title>Reportes</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1>Reportes en tiempo real</h1>
+  <h1 class="titulo">Reportes en Tiempo Real</h1>
 
-    <form id="filtros">
-        Curso ID: <input type="text" id="curso_id">
-        Fecha inicio: <input type="date" id="fecha_inicio">
-        Fecha fin: <input type="date" id="fecha_fin">
-        <button type="button" onclick="cargarReporte()">Generar</button>
-    </form>
+  <div class="tabla-container">
+    <label for="reporte-select"><strong>Selecciona un reporte:</strong></label>
+    <select id="reporte-select">
+      <option value="">-- Seleccionar --</option>
+      <option value="avance">Avance de estudiantes</option>
+      <option value="ranking">Ranking por calificaciones</option>
+      <option value="entregas">Evaluaciones entregadas</option>
+      <option value="inscripciones">Inscripciones por periodo</option>
+      <option value="cursos">Cursos por categoría</option>
+    </select>
 
-    <div id="resultado"></div>
+    <form id="filtros-form" style="margin-top: 20px;"></form>
 
-    <script src="{{ url_for('static', filename='js/reportes.js') }}"></script>
+    <button id="generar-reporte" style="margin: 20px 0;">Generar Reporte</button>
+
+    <button id='exportar-pdf'>Exportar PDF 📄</button>
+    <button id='exportar-csv'>Exportar CSV 📄</button>
+
+    <div id="resultado-reporte"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/reportes.js') }}"></script>
 </body>
 </html>
