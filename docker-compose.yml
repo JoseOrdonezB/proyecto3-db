@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: plataforma_cursos
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+    restart: always
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: flask_backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      FLASK_ENV: development
+      DB_HOST: db
+      DB_NAME: plataforma_cursos
+      DB_USER: postgres
+      DB_PASS: postgres
+    volumes:
+      - ./backend:/app

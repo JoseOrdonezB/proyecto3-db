@@ -154,6 +154,7 @@ def obtener_reporte_inscripciones(fecha_inicio=None, fecha_fin=None, curso_id=No
 def obtener_reporte_cursos(id_categoria=None, duracion_min=0, duracion_max=100, instructor_id=None, nombre_like=None):
     conn = get_db_connection()
     cur = conn.cursor()
+
     query = """
         SELECT c.nombre, cat.nombre_categoria, c.duracion_horas, ins.nombre
         FROM cursos c
@@ -163,20 +164,26 @@ def obtener_reporte_cursos(id_categoria=None, duracion_min=0, duracion_max=100, 
         WHERE c.duracion_horas BETWEEN %s AND %s
     """
     params = [duracion_min, duracion_max]
-    if id_categoria:
+
+    if id_categoria is not None:
         query += " AND cat.id_categoria = %s"
         params.append(id_categoria)
-    if instructor_id:
+
+    if instructor_id is not None:
         query += " AND ins.id_instructor = %s"
         params.append(instructor_id)
+
     if nombre_like:
         query += " AND c.nombre ILIKE %s"
         params.append(f"%{nombre_like}%")
+
     query += " ORDER BY c.nombre"
+
     cur.execute(query, params)
     rows = cur.fetchall()
     cur.close()
     conn.close()
+
     return [
         {
             "curso": row[0],
