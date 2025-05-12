@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Plataforma de Cursos</title>
+  <meta charset="UTF-8">
+  <title>Plataforma de Cursos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1>Bienvenido a la plataforma</h1>
-    <a href="/reportes">Ir a reportes</a>
-    <div id="contenido"></div>
+  <h1 class="titulo">Bienvenido a la Plataforma de Cursos</h1>
 
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <div class="card-container">
+  <a href="/estudiantes" class="card">
+    <div class="card-icon">👨‍🎓</div>
+    <h2>Estudiantes</h2>
+    <p>Ver listado de estudiantes registrados</p>
+  </a>
+
+  <a href="/cursos" class="card">
+    <div class="card-icon">📚</div>
+    <h2>Cursos</h2>
+    <p>Explora los cursos disponibles</p>
+  </a>
+
+  <a href="/instructores" class="card">
+    <div class="card-icon">🧑‍🏫</div>
+    <h2>Instructores</h2>
+    <p>Conoce a los instructores</p>
+  </a>
+
+  <a href="/reportes" class="card">
+    <div class="card-icon">📊</div>
+    <h2>Reportes</h2>
+    <p>Genera reportes en tiempo real</p>
+  </a>
+</div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

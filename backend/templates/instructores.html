@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Instructores</title>
+  <meta charset="UTF-8">
+  <title>Listado de Instructores</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1>Información de instructores</h1>
-    <a href="/index">Home</a>
-    <div id="contenido"></div>
+  <h1 class="titulo">Instructores</h1>
 
-    <script src="{{ url_for('static', filename='js/instructores.js') }}"></script>
+  <div class="tabla-container">
+    <table class="tabla-estudiantes" id="tabla-instructores">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Especialidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí se insertarán los instructores -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/instructores.js') }}"></script>
 </body>
 </html>

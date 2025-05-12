@@ -2,12 +2,16 @@ from flask import Flask, render_template
 from flask_cors import CORS
 from routes.estudiantes import estudiantes_bp
 from routes.reportes import reportes_bp
+from routes.instructores import instructores_bp
+from routes.cursos import cursos_bp
 
 app = Flask(__name__)
 CORS(app)
 
 app.register_blueprint(estudiantes_bp)
 app.register_blueprint(reportes_bp)
+app.register_blueprint(instructores_bp)
+app.register_blueprint(cursos_bp)
 
 @app.route('/')
 def index():
