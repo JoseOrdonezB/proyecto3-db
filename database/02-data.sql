@@ -90,6 +90,14 @@ INSERT INTO estudiantes (nombre, correo, fecha_nacimiento) VALUES
 ('Mía Andrade', 'mia.andrade@example.com', '2000-07-30'),
 ('Bastián Paredes', 'bastian.paredes@example.com', '2001-05-18'),
 ('Alicia Montoya', 'alicia.montoya@example.com', '2002-09-03'),
+('Paco Gomez', 'paco.gomez@example.com', '2004-12-03'),
+('Fernando Montoya', 'fernando.montoya@example.com', '2002-09-07'),
+('Mauricio Chacon', 'mauricio.chacon@example.com', '2010-10-13'),
+('Sebastian Corolario', 'sebastian.corolario@example.com', '2008-07-23'),
+('Rene Gul', 'rene.gul@example.com', '2001-01-01'),
+('Georgina Rodriguez', 'georgina.rodriguez@example.com', '2000-07-07'),
+('Alejandro Lococo', 'alejandro.lococo@example.com', '2010-05-15'),
+('Manucho Conflicto', 'manucho.conflico@example.com', '2004-12-31'),
 ('Elías Araya', 'elias.araya@example.com', '2003-02-06');
 
 INSERT INTO instructores (nombre, correo, especialidad) VALUES
